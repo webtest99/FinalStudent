@@ -1,6 +1,5 @@
 const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwSjwrKY8FVE_cn4y0sjpSPtdCibv4XN6w-YjKH7A9RLuW2X6BnyBjVACKqBXSMJQjSVA/exec';
 
-// Switch between login and register forms
 function toggleForms() {
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
@@ -17,11 +16,20 @@ function toggleForms() {
   }
 }
 
-// Register a new user
+function showLoading() {
+  document.getElementById('loading').style.display = 'block';
+}
+
+function hideLoading() {
+  document.getElementById('loading').style.display = 'none';
+}
+
 function register() {
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
-  
+
+  showLoading(); // Show loading spinner
+
   fetch(googleScriptURL, {
     method: 'POST',
     body: new URLSearchParams({
@@ -30,13 +38,21 @@ function register() {
       'password': password
     })
   }).then(response => response.text())
-    .then(result => alert(result));
+    .then(result => {
+      alert(result);
+      hideLoading(); // Hide loading spinner
+    })
+    .catch(error => {
+      alert('Error: ' + error);
+      hideLoading(); // Hide loading spinner
+    });
 }
 
-// Login an existing user
 function login() {
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
+
+  showLoading(); // Show loading spinner
 
   fetch(googleScriptURL, {
     method: 'POST',
@@ -48,21 +64,26 @@ function login() {
   }).then(response => response.text())
     .then(result => {
       if (result === 'Login successful!') {
-        // Show student details form
         document.getElementById('login-form').style.display = 'none';
         document.getElementById('student-form').style.display = 'block';
       } else {
         alert(result);
       }
+      hideLoading(); // Hide loading spinner
+    })
+    .catch(error => {
+      alert('Error: ' + error);
+      hideLoading(); // Hide loading spinner
     });
 }
 
-// Save student details
 function saveStudentDetails() {
   const email = document.getElementById('login-email').value;
   const name = document.getElementById('student-name').value;
   const age = document.getElementById('student-age').value;
   const classGrade = document.getElementById('student-class').value;
+
+  showLoading(); // Show loading spinner
 
   fetch(googleScriptURL, {
     method: 'POST',
@@ -74,5 +95,12 @@ function saveStudentDetails() {
       'classGrade': classGrade
     })
   }).then(response => response.text())
-    .then(result => alert(result));
+    .then(result => {
+      alert(result);
+      hideLoading(); // Hide loading spinner
+    })
+    .catch(error => {
+      alert('Error: ' + error);
+      hideLoading(); // Hide loading spinner
+    });
 }
