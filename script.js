@@ -1,4 +1,4 @@
-const googleScriptURL = 'YOUR_GOOGLE_SCRIPT_DEPLOYMENT_URL';
+const googleScriptURL = 'https://script.google.com/macros/s/AKfycbytgtfm5I3Q0ScL97KWqj0LLTbiOAkDJKGFHfkVKa4cDUSr2nDPv7f0cdJzOcotn5nSvQ/exec';
 
 // Switch between login and register forms
 function toggleForms() {
