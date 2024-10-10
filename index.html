@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h2>Student Management System</h2>
+  
+  <!-- Login Form -->
+  <div id="login-form">
+    <h3>Sign In</h3>
+    <input type="text" id="login-email" placeholder="Email"><br>
+    <input type="password" id="login-password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Registration Form -->
+  <div id="register-form">
+    <h3>Sign Up</h3>
+    <input type="text" id="register-email" placeholder="Email"><br>
+    <input type="password" id="register-password" placeholder="Password"><br>
+    <button onclick="register()">Register</button>
+  </div>
+
+  <!-- Student Details Form -->
+  <div id="student-form">
+    <h3>Student Details</h3>
+    <input type="text" id="student-name" placeholder="Name"><br>
+    <input type="text" id="student-age" placeholder="Age"><br>
+    <input type="text" id="student-class" placeholder="Class"><br>
+    <button onclick="saveStudentDetails()">Save</button>
+  </div>
+
+  <button id="toggle-forms" onclick="toggleForms()">Switch to Sign Up</button>
+</body>
+</html>
