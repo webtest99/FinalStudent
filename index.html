@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Management System</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <h2>Student Management System</h2>
@@ -36,5 +36,39 @@
   </div>
 
   <button id="toggle-forms" onclick="toggleForms()">Switch to Sign Up</button>
+
+  <!-- Loading Spinner -->
+  <div id="loading" style="display:none;">
+    <p>Loading...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <style>
+    /* Loading Spinner CSS */
+    #loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .spinner {
+      border: 5px solid #f3f3f3; /* Light grey */
+      border-top: 5px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </body>
 </html>
