@@ -1,4 +1,4 @@
-const googleScriptURL = 'https://script.google.com/macros/s/AKfycbytgtfm5I3Q0ScL97KWqj0LLTbiOAkDJKGFHfkVKa4cDUSr2nDPv7f0cdJzOcotn5nSvQ/exec';
+const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwSjwrKY8FVE_cn4y0sjpSPtdCibv4XN6w-YjKH7A9RLuW2X6BnyBjVACKqBXSMJQjSVA/exec';
 
 // Switch between login and register forms
 function toggleForms() {
